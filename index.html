@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Birthday Surprise 🎂</title>
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka&display=swap" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.6.0/dist/confetti.browser.min.js"></script>
+</head>
+<body>
+
+<div id="screen1" class="screen active">
+  <div class="card">
+
+    <img src="assets/images/hi.gif" class="intro-img">
+
+    <p class="intro-text">
+      alooooo cantiiii 🫶🏻👋🏻
+    </p>
+
+    <button class="start-btn" onclick="nextScreen(2)">
+      tap disini <3
+    </button>
+
+  </div>
+</div>
+
+<div id="screen2" class="screen">
+    <button class="back-btn" onclick="prevScreen()">←</button>
+    <div class="card">
+        <img src="assets/images/melody.gif" class="gif">
+        <h2>
+  Today, this pretty girl turns 21! <br>
+  Happy birthday yaaa Anjaniii 🩵
+</h2>
+        <!-- <div id="display"></div> -->
+        <h4>Click the next button >.< </h4>
+        <button class="start-btn" onclick="nextScreen(3)">Next ^w^</button>
+    </div>
+</div>
+    
+<div id="screen3" class="screen">
+    <button class="back-btn" onclick="prevScreen()">←</button>
+  
+    <div class="gallery-container">
+      <h2 class="title">Ini foto-foto Roblox kitaaaa :3</h2>
+
+      <div class="gallery">
+        <img src="assets/images/roblox1.png" alt="Roblox 1">
+        <img src="assets/images/roblox2.png" alt="Roblox 2">
+        <img src="assets/images/roblox3.png" alt="Roblox 3">
+        <img src="assets/images/roblox4.png" alt="Roblox 4">
+        <img src="assets/images/roblox5.png" alt="Roblox 5">
+        <img src="assets/images/roblox6.png" alt="Roblox 6">
+      </div>
+
+      <button class="start-btn-white" onclick="nextScreen(4)">Lanjooottt !!!</button>
+    </div>
+</div>
+
+<div id="screen4" class="screen">
+    <button class="back-btn" onclick="prevScreen()">←</button>
+  <div class="card">
+
+    <h2 class="title"> A Song Just For You 💙</h2>
+
+    <!-- SPOTIFY EMBED -->
+    <iframe 
+      style="border-radius:12px" 
+      src="https://open.spotify.com/embed/track/5f9Nt75lq1MLzf5F2xJwTI" 
+      width="100%" 
+      height="152" 
+      frameBorder="0" 
+      allowfullscreen="" 
+      allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture">
+    </iframe>
+
+    <h3 class="song-title">Prettiest Thing I've Ever Seen</h3>
+    <p class="artist">LANY</p>
+
+    <p class="quote">
+  "You're the prettiest thing I've ever seen,
+  and I fall for you a little more every day."
+    </p>
+
+    <button onclick="nextScreen(5)">lanjoooott !!</button>
+
+  </div>
+</div>
+
+<div id="screen5" class="screen">
+    <button class="back-btn" onclick="prevScreen()">←</button>
+    <h2 class="title">Dannn inii playlistnyaaaaa ahihihihihi >.<</h2>
+  <div class="music-card">
+    <iframe 
+      style="border-radius:12px" 
+      src="https://open.spotify.com/embed/playlist/15G9XgrBKnvm8jmmRzBIgn?utm_source=generator" 
+      width="100%" 
+      height="352" 
+      frameBorder="0" 
+      allowfullscreen="" 
+      allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture">
+    </iframe>
+  </div>
+  <button class="start-btn-white" onclick="nextScreen(6)">lanjoooott !!</button>
+</div>
+
+<div id="screen6" class="screen">
+    <button class="back-btn" onclick="prevScreen()">←</button>
+  <div class="last-screen">
+
+    <img src="assets/images/my-melody.gif" class="last-img">
+
+    <p class="last-text">
+      okayy last one, i wrote a letter
+      for you, read it slowly
+      okayyy
+    </p>
+
+    <button class="heart-btn" onclick="nextScreen(7)">
+      &lt;3
+    </button>
+
+  </div>
+</div>
+
+<div id="screen7" class="screen">
+    <button class="back-btn" onclick="prevScreen()">←</button>
+
+    <div class="card">
+        <h1>Happy Birthday Anjaaaniiiii </h1>
+        <p class="quote">
+    On your special day, I just want to remind you how grateful I am to have you in my life.
+    Thank you for being the amazing person you are—kind, loving, and always making everything.
+    feel a little warmer just by being around. <br>
+    Selamat bertambah usia yaa Anjaniii, semoga di umur yang baru ini kamu selalu diberikan kesehatan, kebahagiaan, dan kesuksesan dalam segala hal yang kamu lakukan. Semoga semua impian dan harapanmu tercapai. Semoga tahun ini kamu lulus, semoga skripsi kamu lancar dannnn no more nangis nangis lagi yyaa hihihihi intinyaa aku mauu kamu happy happy terus yaaaaa.<br>
+    Makasih yaa uda hadir dihidup aku, udah nemenin aku, dan udah jadi temen main aku selama ini. Aku bener-bener bersyukur bisa kenal kamu, dan aku berharap kita bisa terus jadi temen baik selamanya.
+    akuu gatau lagi mau ngomong apa, pokoknya aku sayang kamu banget, dan aku berharap kamu selalu bahagia bahagiaa. Aku akan selalu ada buat kamuu, kapan pun kamu butuh aku. Sekali lagi, selamat ulang tahun yaaa Anjaniiiku cintaku sayangku maniskuu cantikuu udah ah maloee hihihi <br>
+</p>
+    </div>
+</div>
+
+<!-- MUSIC -->
+<audio id="music" loop>
+  <source src="music.mp3" type="audio/mp3">
+</audio>
+
+<script src="assets\js\script.js"></script>
+</body>
+</html>

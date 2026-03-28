@@ -1,0 +1,626 @@
+body {
+  margin: 0;
+  font-family: Arial;
+  text-align: center;
+
+  background-image: url("../images/background.jpg");
+  background-size: cover;        /* biar full layar */
+  background-position: center;   /* center */
+  background-repeat: no-repeat;  /* tidak diulang */
+  height: 100vh;
+  backdrop-filter: blur(2px);
+  font-family: 'Fredoka', sans-serif;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+
+  background: rgba(255, 192, 203, 0.3); /* pink transparan */
+  
+
+  z-index: -1;
+}
+
+.screen {
+  display: none;
+  height: 100vh;
+
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.screen.active {
+  display: flex;
+}
+
+h1, h2, p {
+  color: #333;
+}
+
+.title {
+  font-size: 28px;
+  font-weight: 700;
+  margin: 20px 0;
+  line-height: 1.4;
+}
+
+button {
+  padding: 12px 20px;
+  margin: 10px;
+  border: none;
+  border-radius: 12px;
+  background: pink;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+/* KEYPAD */
+.keypad {
+  display: grid;
+  grid-template-columns: repeat(3, 80px);
+  gap: 10px;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.keypad button {
+  height: 60px;
+  font-size: 18px;
+}
+
+#display {
+  font-size: 30px;
+  letter-spacing: 10px;
+  margin: 20px;
+}
+
+/* IMAGE */
+img {
+  width: 250px;
+  border-radius: 20px;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+}
+.card {
+  background: white;
+  padding: 30px;
+  border-radius: 25px;
+
+  width: 90%;
+  max-width: 400px;
+
+  text-align: center;
+
+  /* biar di tengah */
+  margin: auto;
+}
+
+/* =========================
+   GALLERY CONTAINER - RESPONSIVE
+========================= */
+.gallery-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 0 10px;
+  box-sizing: border-box;
+  max-height: calc(100vh - 100px);
+}
+
+.gallery-container .title {
+  width: 100%;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+/* DESKTOP */
+@media (min-width: 768px) {
+  .gallery-container {
+    padding: 0 20px;
+  }
+}
+
+/* TABLET */
+@media (max-width: 768px) and (min-width: 481px) {
+  .gallery-container {
+    padding: 0 15px;
+  }
+}
+
+/* MOBILE */
+@media (max-width: 480px) {
+  .gallery-container {
+    width: 100%;
+    padding: 0;
+    margin-bottom: 20px;
+  }
+
+  .gallery-container .title {
+    margin-bottom: 15px;
+    font-size: 18px;
+  }
+
+  .gallery-container .start-btn-white {
+    margin-top: 30px;
+    width: 90%;
+    max-width: 200px;
+  }
+}
+
+/* =========================
+   MUSIC CARD - RESPONSIVE
+========================= */
+.music-card {
+  width: 90%;
+  max-width: 500px;
+  
+  animation: slideUp 0.6s ease-out;
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* .music-card iframe {
+  max-height: 480px;
+} */
+
+/* DESKTOP (DEFAULT) */
+@media (min-width: 768px) {
+  .music-card {
+    max-width: 500px;
+    /* padding: 30px; */
+  }
+}
+
+/* TABLET */
+@media (max-width: 768px) {
+  .music-card {
+    max-width: 450px;
+    /* padding: 20px; */
+    width: 85%;
+  }
+
+  .music-card iframe {
+    max-height: 360px;
+  }
+}
+
+/* MOBILE */
+@media (max-width: 480px) {
+  .music-card {
+    width: 90%;
+    max-width: 100%;
+    /* padding: 15px; */
+    border-radius: 15px;
+    margin: 10px auto 15px auto;
+  }
+
+  /* .music-card iframe {
+    max-height: 280px;
+    border-radius: 10px;
+  } */
+}
+
+.gif {
+  width: 120px;
+  margin-bottom: 15px;
+  animation: float 2s ease-in-out infinite;
+}
+
+@keyframes float {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-8px); }
+  100% { transform: translateY(0px); }
+}
+
+/* =========================
+   DESKTOP (DEFAULT)
+========================= */
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  max-width: 600px;
+  margin: 20px auto;
+  width: 90%;
+  padding: 0 10px;
+}
+
+/* IMAGE */
+.gallery img {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+
+  /* FRAME PUTIH */
+  background: white;
+  padding: 10px 10px 40px 10px;
+
+  /* ROUND */
+  border-radius: 0;
+
+  /* SHADOW */
+  box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  animation: fadeIn 0.5s ease;
+
+  cursor: pointer;
+}
+
+/* ROTATE EFFECT */
+.gallery img:nth-child(odd) {
+  transform: rotate(-2deg);
+}
+
+.gallery img:nth-child(even) {
+  transform: rotate(2deg);
+}
+
+/* HOVER */
+.gallery img:nth-child(odd):hover {
+  transform: rotate(-2deg) scale(1.1) translateY(-5px);
+  box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+}
+
+.gallery img:nth-child(even):hover {
+  transform: rotate(2deg) scale(1.1) translateY(-5px);
+  box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+}
+
+/* ANIMATION */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.8) rotate(0deg);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1) rotate(0deg);
+  }
+}
+
+/* =========================
+   TABLET
+========================= */
+@media (max-width: 768px) {
+  .gallery {
+    grid-template-columns: repeat(2, 1fr);
+    max-width: 400px;
+    gap: 15px;
+    margin: 20px auto;
+    width: 90%;
+  }
+
+  .gallery img {
+    padding: 8px 8px 35px 8px;
+  }
+}
+
+/* =========================
+   MOBILE (Beda Total 🔥)
+========================= */
+@media (max-width: 480px) {
+  /* SCREEN SPACING FOR BACK BUTTON */
+  .screen {
+    padding-top: 70px;
+    padding-bottom: 20px;
+    overflow-y: auto;
+  }
+
+  /* TITLE ON GALLERY SCREEN */
+  .title {
+    font-size: 18px;
+    margin: 0 0 15px 0;
+    padding: 0 15px;
+  }
+
+  /* GALLERY CONTAINER */
+  .gallery {
+    display: flex;
+    overflow-x: auto;
+    gap: 12px;
+    padding: 10px 15px;
+    max-width: 100%;
+    margin: 0;
+    width: 100%;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    scroll-behavior: smooth;
+  }
+
+  /* IMAGE MOBILE */
+  .gallery img {
+    min-width: 160px;
+    max-width: 160px;
+    height: 160px;
+    flex-shrink: 0;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    border-radius: 15px;
+    padding: 0;
+    background: white;
+    scroll-snap-align: start;
+
+    /* reset rotate */
+    transform: none !important;
+
+    /* smooth tap */
+    transition: transform 0.2s ease;
+    box-shadow: 0 8px 15px rgba(0,0,0,0.15);
+  }
+
+  /* TAP EFFECT (pengganti hover) */
+  .gallery img:active {
+    transform: scale(1.08) !important;
+    box-shadow: 0 12px 20px rgba(0,0,0,0.2);
+  }
+
+  /* CARD */
+  .card {
+    padding: 15px;
+    width: 90%;
+    margin: 0 auto;
+  }
+}
+
+/* TABLET - TITLE */
+@media (max-width: 768px) and (min-width: 481px) {
+  .title {
+    font-size: 24px;
+    margin: 18px 0;
+  }
+}
+/* INTRO STYLE */
+.intro {
+  background: #f2f3f5;
+  box-shadow: none;
+}
+
+
+/* GIF */
+.intro-img {
+  width: 150px;
+  margin: 10px 0;
+  box-shadow: none;
+}
+
+/* TEXT */
+.intro-text {
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+/* BUTTON */
+.start-btn {
+  background: #fbc1db;
+  color: black;
+  padding: 12px 25px;
+  border-radius: 25px;
+  border: none;
+  font-size: 16px;
+  cursor: pointer;
+
+  /* box-shadow: 0 8px 20px rgba(0,0,0,0.2); */
+  transition: 0.3s;
+}
+
+.start-btn-white {
+  background: whitesmoke;
+  color: #fbc1db;
+  padding: 12px 25px;
+  border-radius: 25px;
+  border: none;
+  font-size: 16px;
+  cursor: pointer;
+
+  /* box-shadow: 0 8px 20px rgba(0,0,0,0.2); */
+  transition: 0.3s;
+}
+
+.start-btn-white:hover {
+  transform: scale(1.05);
+}
+
+.start-btn:hover {
+  transform: scale(1.05);
+}
+
+/* MOBILE - BUTTON SPACING */
+@media (max-width: 480px) {
+  button {
+    padding: 12px 20px;
+    margin: 20px 10px 10px 10px;
+    font-size: 14px;
+  }
+
+  .start-btn-white,
+  .start-btn {
+    width: auto;
+    min-width: 120px;
+  }
+}
+
+/* =========================
+   SONG DETAILS - RESPONSIVE
+========================= */
+.song-title {
+  font-size: 22px;
+  color: #333;
+  margin: 20px 0 5px 0;
+  font-weight: 600;
+}
+
+.artist {
+  font-size: 14px;
+  color: #666;
+  margin: 0 0 15px 0;
+  font-weight: 500;
+}
+
+.quote {
+  font-size: 16px;
+  color: #555;
+  font-style: italic;
+  margin: 15px 0;
+  line-height: 1.6;
+  padding: 15px;
+  background: rgba(251, 193, 219, 0.1);
+  border-radius: 12px;
+}
+
+/* BACK BUTTON */
+.back-btn {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  background: white;
+  color: #fbc1db;
+  border: 2px solid #fbc1db;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  font-size: 20px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  z-index: 10;
+}
+
+.back-btn:hover {
+  background: #fbc1db;
+  color: white;
+  transform: scale(1.1);
+}
+
+/* MOBILE - SONG DETAILS */
+@media (max-width: 480px) {
+  .song-title {
+    font-size: 18px;
+    margin: 15px 0 5px 0;
+  }
+
+  .artist {
+    font-size: 12px;
+    margin-bottom: 12px;
+  }
+
+  .quote {
+    font-size: 14px;
+    padding: 12px;
+    margin: 12px 0;
+  }
+
+  .back-btn {
+    top: 15px;
+    left: 15px;
+    width: 38px;
+    height: 38px;
+    font-size: 18px;
+    position: fixed;
+  }
+}
+
+/* TABLET - SONG DETAILS */
+@media (max-width: 768px) and (min-width: 481px) {
+  .song-title {
+    font-size: 20px;
+  }
+
+  .quote {
+    font-size: 15px;
+    padding: 14px;
+  }
+}
+
+iframe {
+  box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+}
+
+/* CONTAINER */
+.last-screen {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+/* GIF */
+.last-img {
+  width: 120px;
+  margin-bottom: 20px;
+}
+
+/* TEXT */
+.last-text {
+  font-size: 20px;
+  font-weight: bold;
+  color: black;
+  line-height: 1.6;
+  margin-bottom: 30px;
+  max-width: 300px;
+}
+
+/* BUTTON BULAT */
+.heart-btn {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  border: none;
+
+  background: #fbc1db;
+  color: black;
+
+  font-size: 18px;
+  cursor: pointer;
+
+  box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+  transition: 0.3s;
+}
+
+/* HOVER */
+.heart-btn:hover {
+  transform: scale(1.1);
+}
+.last-img {
+  animation: float 2s ease-in-out infinite;
+}
+
+@keyframes float {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-8px); }
+  100% { transform: translateY(0); }
+}
+
+.quote {
+  font-size: 16px;
+  color: #555;
+  text-align: left;
+  font-style: italic;
+  margin: 15px 0;
+  line-height: 1.6;
+  padding: 15px;
+  background: rgba(251, 193, 219, 0.1);
+  border-radius: 12px;
+}
