@@ -48,7 +48,7 @@ function createFallingHearts() {
     setTimeout(() => {
       heart.remove();
     }, (duration + delay) * 1000);
-  }, 400); // Buat hati baru setiap 400ms
+  }, 500); // Buat hati baru setiap 400ms
 }
 
 // Mulai animasi saat halaman dimuat
